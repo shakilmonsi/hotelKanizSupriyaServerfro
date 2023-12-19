@@ -38,6 +38,24 @@ async function run() {
     const menuCollection = client.db("bistroDb").collection("menu");
     const reviewCollection = client.db("bistroDb").collection("reviews");
     const cartCollection = client.db("bistroDb").collection("carts");
+    const  userCollection = client.db("bistroDb").collection("user");
+
+// user releted  post  api 
+ app.post("/users",async(req,res)=>{
+  const user = req.body ;
+// google  and  to email testing
+ const query = {email: user.email}
+  const existingUser = await userCollection.findOne(query);
+  console.log("skksksks ", existingUser)
+if(existingUser){
+  return res.send({message: " user already exists "})
+}
+
+
+  const result = await userCollection.insertOne(user)
+  res.send(result)
+ })
+
 
     app.get('/menu', async (req, res) => {
       const result = await menuCollection.find().toArray();
