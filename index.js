@@ -40,6 +40,15 @@ async function run() {
     const cartCollection = client.db("bistroDb").collection("carts");
     const  userCollection = client.db("bistroDb").collection("user");
 
+
+
+// // get system setup 
+app.get("/users",async(req,res)=>{
+  const result = await userCollection.find().toArray();
+  res.send(result)
+})
+
+
 // user releted  post  api 
  app.post("/users",async(req,res)=>{
   const user = req.body ;
