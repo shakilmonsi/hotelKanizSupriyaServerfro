@@ -13,6 +13,20 @@ app.use(cors());
 app.use(express.json());
 
 
+// fontend code 
+VITE_apiKey=AIzaSyDc5QbkCPSAPK7cQbAQuDcavxFLUMIbu8I
+VITE_authDomain=bbdtaskmsyproject.firebaseapp.com
+VITE_projectId=bdtaskmsyproject
+VITE_storageBucket=bdtaskmsyproject.appspot.com
+VITE_messagingSenderId=299665703937
+VITE_appId=1:299665703937:web:050c1f6cb4d761f87dac00
+VITE_IMAGE_HOSTING_KEY=de7ac3923cd99036618d8c60625cbcf2
+VITE_Payment_PK=pk_test_51M6kTjFJTw8ifWpVBvd7qeW5xBBap3ghvFft04eU7PQh3l3saaLhgMvCFq6LBHjHvNR4mdHyItKS6c1MFwD9eUHK00GxQnnGfs
+
+
+
+
+
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.fm710lc.mongodb.net/?retryWrites=true&w=majority`;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
